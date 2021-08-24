@@ -1,21 +1,66 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background: #000;
+  user-select: none;
 }
 
-div {
-  user-select: none;
+.score {
   position: fixed;
   top: 0;
   left: 0;
   font-size: 1rem;
-  font-family: sans-serif;
   color: #fff;
   margin: 1rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 18.75rem;
+  padding: 1.2rem;
+}
+
+.modal h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+.modal p {
+  font-size: 0.85rem;
+  font-weight: 100;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.modal button {
+  background-color: #007fff;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  outline: none;
+  max-width: 100%;
+  width: 100%;
 }

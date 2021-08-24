@@ -5,6 +5,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const scoreEl = document.querySelector("#score");
+const startBtn = document.querySelector("#start-btn");
+const modal = document.querySelector("#modal");
+const scoreModal = document.querySelector("#score-modal");
 class Player {
   constructor(x, y, radius, color) {
     this.x = x;
@@ -169,6 +172,8 @@ function animate() {
 
     if (dist - enemy.radius - player.radius < 1) {
       cancelAnimationFrame(animationId);
+      modal.style.display = "flex";
+      scoreModal.innerHTML = score;
     }
 
     projectiles.forEach((projectile, projectileIndex) => {
@@ -231,5 +236,8 @@ addEventListener("click", (event) => {
   );
 });
 
-animate();
-spawnEnemies();
+startBtn.addEventListener("click", () => {
+  animate();
+  spawnEnemies();
+  modal.style.display = "none";
+});
