@@ -169,7 +169,7 @@ function animate() {
       projectile.x + projectile.radius < 0 ||
       projectile.x - projectile.radius > canvas.width ||
       projectile.y + projectile.radius < 0 ||
-      projectile.x - projectile.radius > canvas.height
+      projectile.y - projectile.radius > canvas.height
     ) {
       setTimeout(() => {
         projectiles.splice(index, 1);
