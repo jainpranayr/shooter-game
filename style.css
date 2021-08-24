@@ -14,13 +14,21 @@ body {
   user-select: none;
 }
 
-.score {
+.score,
+.high-score {
   position: fixed;
   top: 0;
-  left: 0;
   font-size: 1rem;
   color: #fff;
   margin: 1rem;
+}
+
+.score {
+  left: 0;
+}
+
+.high-score {
+  right: 0;
 }
 
 .modal {

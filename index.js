@@ -8,6 +8,7 @@ const scoreEl = document.querySelector("#score");
 const startBtn = document.querySelector("#start-btn");
 const modal = document.querySelector("#modal");
 const scoreModal = document.querySelector("#score-modal");
+const highScoreEl = document.querySelector("#high-score");
 class Player {
   constructor(x, y, radius, color) {
     this.x = x;
@@ -109,6 +110,17 @@ let player = new Player(x, y, 10, "#fff");
 let projectiles = [];
 let enemies = [];
 let particles = [];
+
+let highScore = localStorage.getItem("playerHighScore") || 0;
+highScoreEl.innerHTML = highScore;
+
+function getHighScore() {
+  if (score > localStorage.getItem("playerHighScore")) {
+    localStorage.setItem("playerHighScore", score);
+    highScore = score;
+    highScoreEl.innerHTML = highScore;
+  }
+}
 
 function init() {
   player = new Player(x, y, 10, "#fff");
@@ -229,6 +241,7 @@ function animate() {
       }
     });
   });
+  getHighScore();
 }
 
 addEventListener("click", (event) => {
